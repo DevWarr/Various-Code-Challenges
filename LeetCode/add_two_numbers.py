@@ -37,7 +37,7 @@ def addTwoNumbers(l1, l2):
     return result.next
 
 
-def createNodeFromNumbers(number):
+def createSLLFromNumbers(number):
     curr = ListNode()
     track = curr
 
@@ -48,20 +48,20 @@ def createNodeFromNumbers(number):
     return curr.next
 
 
-class CreateNodeFromNumbersTest(unittest.TestCase):
+class CreateSLLFromNumbersTest(unittest.TestCase):
 
     def test_1(self):
-        sll = createNodeFromNumbers(0)
+        sll = createSLLFromNumbers(0)
         self.assertEqual(sll.val, 0)
 
     def test_2(self):
-        sll = createNodeFromNumbers(125)
+        sll = createSLLFromNumbers(125)
         self.assertEqual(sll.val, 5)
         self.assertEqual(sll.next.val, 2)
         self.assertEqual(sll.next.next.val, 1)
 
     def test_3(self):
-        sll = createNodeFromNumbers(9876543210)
+        sll = createSLLFromNumbers(9876543210)
         track = sll
 
         for i in range(10):
@@ -72,8 +72,8 @@ class CreateNodeFromNumbersTest(unittest.TestCase):
 class AddTwoNumbersTest(unittest.TestCase):
 
     def test_1(self):
-        l1 = createNodeFromNumbers(125)
-        l2 = createNodeFromNumbers(125)
+        l1 = createSLLFromNumbers(125)
+        l2 = createSLLFromNumbers(125)
         result = addTwoNumbers(l1, l2)
 
         # 125 + 125 = 250
@@ -82,8 +82,8 @@ class AddTwoNumbersTest(unittest.TestCase):
         self.assertEqual(result.next.next.val, 2)
 
     def test_2(self):
-        l1 = createNodeFromNumbers(342)
-        l2 = createNodeFromNumbers(465)
+        l1 = createSLLFromNumbers(342)
+        l2 = createSLLFromNumbers(465)
         result = addTwoNumbers(l1, l2)
 
         # 342 + 465 = 807
@@ -92,8 +92,8 @@ class AddTwoNumbersTest(unittest.TestCase):
         self.assertEqual(result.next.next.val, 8)
 
     def test_3(self):
-        l1 = createNodeFromNumbers(5678)
-        l2 = createNodeFromNumbers(9932)
+        l1 = createSLLFromNumbers(5678)
+        l2 = createSLLFromNumbers(9932)
         result = addTwoNumbers(l1, l2)
 
         # 5678 + 9932 = 15610
